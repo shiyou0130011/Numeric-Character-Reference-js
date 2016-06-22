@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "target": "es5",
+	"listFiles": true,
+        "noImplicitAny": false,
+	"outDir": "out",
+	"pretty": false
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}
