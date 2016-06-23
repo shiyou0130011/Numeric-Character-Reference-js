@@ -1,5 +1,5 @@
 /**
- * “Numeric Character Reference”
+ * 字元值參照 (Numeric Character Reference, NCR) 轉換
  */
 var NCR = new function NCR() {
 	var leadAdd = 0xD800, trailAdd = 0xDC00, ncrSubtract = 0x10000
@@ -37,9 +37,18 @@ var NCR = new function NCR() {
 	}
 	
 	/**
-	 * 將字串 str 特殊字元編譯成字元值參照 (Numeric Character Reference, NCR)
-	 * 
+	 * 將字串 str 特殊字元編譯成字元值參照
+	 * @param str 待轉換的 String
 	 * @param hexadecimal 是否輸出成 16 進制的 NCR
+	 * @example 	
+	 * // return "&amp;#20320;&amp;#22909;"
+	 * NCR.encode("你好")
+	 * @example 	
+	 * // return "&amp;#126976;"
+	 * NCR.encode("\uD83C\uDC00")
+	 * @example 	
+	 * // return "&amp;#x10000;"
+	 * NCR.encode("\uD83C\uDC00", true)
 	 */
 	this.encode = function (str: string, hexadecimal: boolean = false): string{
 		for(var i = 0; i < str.length; i++){
@@ -62,7 +71,12 @@ var NCR = new function NCR() {
 		}
 		return str
 	}
-	
+	/**
+	 * 將字元值參照轉為原本字元
+	 * @example 	
+	 * // return "你好"
+	 * NCR.decode("&amp;#20320;&amp;#22909;")
+	 */
 	this.decode = function (str: string): string{
 		return str
 			.replace(/&#x(\w*);/g, function (match, s) {
