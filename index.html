@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="Numeric-character-reference-js : ">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Numeric-character-reference-js</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/shiyou0130011/Numeric-Character-Reference-js">View on GitHub</a>
+
+          <h1 id="project_title">Numeric-character-reference-js</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/shiyou0130011/Numeric-Character-Reference-js/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/shiyou0130011/Numeric-Character-Reference-js/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a id="numeric-character-reference-js--" class="anchor" href="#numeric-character-reference-js--" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Numeric Character Reference js  <a href="http://www.apache.org/licenses/LICENSE-2.0"><img src="https://img.shields.io/badge/listence-apache%202.0-%23CB2533.svg" alt="Apache 2.0 License"></a>
+</h1>
+
+<p>This is a javascript (<a href="https://www.typescriptlang.org/">typescript</a>) project used for conversion between “Numeric Character Reference” (HTML Entity) and the char.</p>
+
+<h2>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Example</h2>
+
+<h3>
+<a id="parsing--english" class="anchor" href="#parsing--english" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parsing  English</h3>
+
+<pre><code>NCR.encode("Hello World")   // will return ("Hello World")
+
+NCR.decode("Hello World")   // will return ("Hello World")
+</code></pre>
+
+<h3>
+<a id="parsing-chinese" class="anchor" href="#parsing-chinese" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Parsing Chinese</h3>
+
+<pre><code>NCR.encode("你好，世界")   // will return "&amp;#20320;&amp;#22909;&amp;#65292;&amp;#19990;&amp;#30028;"
+
+NCR.decode("&amp;#20320;&amp;#22909;&amp;#65292;&amp;#19990;&amp;#30028;")  // will return "你好，世界"
+</code></pre>
+
+<h3>
+<a id="string-width-emoji" class="anchor" href="#string-width-emoji" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>String width Emoji</h3>
+
+<pre><code>NCR.encode("This is a penguin: \uD83D\uDC27")       // will return "This is a penguin: &amp;#128039;"
+NCR.encode("This is a penguin: \uD83D\uDC27", true) // will return "This is a penguin: &amp;#x1f427;"
+
+NCR.decode("This is a penguin: &amp;#x1f427;")          // Using HTML Entity (Hexadecimal). It will return "This is a penguin: \uD83D\uDC27"
+
+NCR.decode("This is a penguin: &amp;#128039;")          // Using HTML Entity (Decimal). It will return "This is a penguin: \uD83D\uDC27", too.
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Numeric-character-reference-js maintained by <a href="https://github.com/shiyou0130011">shiyou0130011</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
