@@ -1,5 +1,5 @@
 /***/
-(function(){
+(function($: Object){
 let leadAdd = 0xD800, trailAdd = 0xDC00, ncrSubtract = 0x10000
 
 /**
@@ -35,7 +35,7 @@ function decodeUTF16(num: number): string {
 /**
  * 字元值參照 (Numeric Character Reference, NCR) 轉換
  */
-class NCR{
+class NCR_{
 	/**
 	 * 將字串 str 特殊字元編譯成字元值參照
 	 * @param str 待轉換的 String
@@ -95,5 +95,5 @@ class NCR{
 	}
 }
 
-return new NCR	
-})()
+$["NCR"] = new NCR_
+})(window)
