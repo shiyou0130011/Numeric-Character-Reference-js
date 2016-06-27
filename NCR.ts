@@ -1,3 +1,5 @@
+/***/
+(function(){
 let leadAdd = 0xD800, trailAdd = 0xDC00, ncrSubtract = 0x10000
 
 /**
@@ -92,3 +94,6 @@ class NCR{
 			})
 	}
 }
+
+return new NCR	
+})()
