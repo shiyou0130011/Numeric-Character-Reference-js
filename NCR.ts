@@ -43,10 +43,6 @@ var NCR = new function NCR() {
 		return String.fromCharCode(lead) + String.fromCharCode(trail)
 	}
 	
-	function decodeHTMLSymbols(){
-		
-	}
-	
 	/**
 	 * 將字串 str 特殊字元編譯成字元值參照
 	 * @param str 待轉換的 String
@@ -83,10 +79,15 @@ var NCR = new function NCR() {
 		return str
 	}
 	/**
-	 * 將字元值參照轉為原本字元
+	 * 將字元值參照或是 HTML Entity 轉為原本字元
 	 * @example 	
+	 * // decode NCR
 	 * // return "你好"
 	 * NCR.decode("&amp;#20320;&amp;#22909;")
+	 * @example 	
+	 * // decode HTML Entity
+	 * // return " "
+	 * NCR.decode("&amp;nbsp;")
 	 */
 	this.decode = function (str: string): string{
 		return str
@@ -102,6 +103,9 @@ var NCR = new function NCR() {
 					return String.fromCharCode(num)
 				}
 				return decodeUTF16(num)
+			})
+			.replace(/&\w+;/g, function(match) {
+				return HTMLSymbols[match] || match
 			})
 	}
 }
