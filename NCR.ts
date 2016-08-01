@@ -111,6 +111,7 @@ var NCR = new function NCR() {
 }
 
 var HTMLSymbols = {
+	// HTML 4 Entity
 	"&amp;":	"\u0026", 
 	"\u0026":	"&amp;", 
 	"&lt;":		"\u003c", 
@@ -415,6 +416,8 @@ var HTMLSymbols = {
 	"\u03d2":	"&upsih;", 
 	"&piv;":	"\u03d6", 
 	"\u03d6":	"&piv;", 
+	
+	// Special Symbols
 	"&bull;":	"\u2022", 
 	"\u2022":	"&bull;", 
 	"&hellip;":	"\u2026", 
@@ -429,6 +432,8 @@ var HTMLSymbols = {
 	"\u2044":	"&frasl;", 
 	"&weierp;":	"\u2118", 
 	"\u2118":	"&weierp;", 
+	
+	// UTF-8 Letterlike Symbols
 	"&image;":	"\u2111", 
 	"\u2111":	"&image;", 
 	"&real;":	"\u211c", 
@@ -438,6 +443,8 @@ var HTMLSymbols = {
 	"&alefsym;":	"\u2135", 
 	"\u2135":	"&alefsym;", 
 	"&larr;":	"\u2190", 
+	
+	// UTF-8 Arrows
 	"\u2190":	"&larr;", 
 	"&uarr;":	"\u2191", 
 	"\u2191":	"&uarr;", 
@@ -459,6 +466,8 @@ var HTMLSymbols = {
 	"\u21d3":	"&dArr;", 
 	"&hArr;":	"\u21d4", 
 	"\u21d4":	"&hArr;", 
+	
+	// UTF-8 Mathematical Operators
 	"&forall;":	"\u2200", 
 	"\u2200":	"&forall;", 
 	"&part;":	"\u2202", 
@@ -547,8 +556,12 @@ var HTMLSymbols = {
 	"\u2329":	"&lang;", 
 	"&rang;":	"\u232a", 
 	"\u232a":	"&rang;", 
+	
+	// UTF-8 Geometric Shapes
 	"&loz;":	"\u25ca", 
 	"\u25ca":	"&loz;", 
+	
+	// UTF-8 Miscellaneous Symbols
 	"&spades;":	"\u2660", 
 	"\u2660":	"&spades;", 
 	"&clubs;":	"\u2663", 
@@ -557,6 +570,8 @@ var HTMLSymbols = {
 	"\u2665":	"&hearts;", 
 	"&diams;":	"\u2666", 
 	"\u2666":	"&diams;", 
+	
+	// UTF-8 General Punctuation
 	"&ensp;":	"\u8194", 
 	"\u8194":	"&ensp;", 
 	"&emsp;":	"\u8195", 
@@ -591,24 +606,26 @@ var HTMLSymbols = {
 	"\u8224":	"&dagger;", 
 	"&Dagger;":	"\u8225", 
 	"\u8225":	"&Dagger;", 
-	"&bull;":	"\u8226", 
+	//"&bull;":	"\u8226", 
 	"\u8226":	"&bull;", 
-	"&hellip;":	"\u8230", 
+	//"&hellip;":	"\u8230", 
 	"\u8230":	"&hellip;", 
 	"&permil;":	"\u8240", 
 	"\u8240":	"&permil;", 
-	"&prime;":	"\u8242", 
+	//"&prime;":	"\u8242", 
 	"\u8242":	"&prime;", 
-	"&Prime;":	"\u8243", 
+	//"&Prime;":	"\u8243", 
 	"\u8243":	"&Prime;", 
 	"&lsaquo;":	"\u8249", 
 	"\u8249":	"&lsaquo;", 
 	"&rsaquo;":	"\u8250", 
 	"\u8250":	"&rsaquo;", 
-	"&oline;":	"\u8254", 
+	//"&oline;":	"\u8254", 
 	"\u8254":	"&oline;", 
-	"&frasl;":	"\u8260", 
-	"\u8260":	"&frasl;", 
+	//"&frasl;":	"\u8260", 
+	"\u8260":	"&frasl;",
+	
+	// UTF-8 Currency Symbols
 	"&euro;":	"\u20ac", 
 	"\u20ac":	"&euro;"
 }
