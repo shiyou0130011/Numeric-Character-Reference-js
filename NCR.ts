@@ -9,8 +9,8 @@
 /**
  * 字元值參照 (Numeric Character Reference, NCR) 轉換
  */
-var NCR = new function NCR() {
-	var leadAdd = 0xD800, trailAdd = 0xDC00, ncrSubtract = 0x10000
+namespace NCR {
+	const leadAdd = 0xD800, trailAdd = 0xDC00, ncrSubtract = 0x10000
 
 	/**
 	 * 將U+10000到U+10FFFF的碼位轉為字元值參照 (Numeric Character Reference, NCR)
@@ -57,7 +57,7 @@ var NCR = new function NCR() {
 	 * // return "&amp;#x10000;"
 	 * NCR.encode("\uD83C\uDC00", true)
 	 */
-	this.encode = function (str: string, hexadecimal: boolean = false): string{
+	export function encode(str: string, hexadecimal: boolean = false): string{
 		for(var i = 0; i < str.length; i++){
 			if(str.charCodeAt(i) >= leadAdd && str.charCodeAt(i + 1) >= trailAdd){
 				str = str.replace(
@@ -89,7 +89,7 @@ var NCR = new function NCR() {
 	 * // return " "
 	 * NCR.decode("&amp;nbsp;")
 	 */
-	this.decode = function (str: string): string{
+	export function decode(str: string): string{
 		return str
 			.replace(/&#x(\w*);/g, function (match, s) {
 				var num = parseInt(s, 16)
