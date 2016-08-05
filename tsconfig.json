@@ -5,6 +5,7 @@
 		"listFiles": true,
 		"noImplicitAny": false,
 		"outDir": "out",
+		"outFile": "out/ncr.js",
 		"pretty": false
 	},
 	"exclude": [
