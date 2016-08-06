@@ -1,6 +1,21 @@
 # Numeric Character Reference js  [![Apache 2.0 License](https://img.shields.io/badge/listence-apache%202.0-%23CB2533.svg)](http://www.apache.org/licenses/LICENSE-2.0)
 This is a javascript ([typescript](https://www.typescriptlang.org/)) project used for conversion between “Numeric Character Reference” (HTML Entity) and the char.
 
+## Compile
+This project is written by [typescript](https://www.typescriptlang.org/).
+
+Please install typescript first:
+
+	npm install -g typescript
+	
+
+Then compile it
+	
+	cd /path/of/the/source/code
+	tsc
+
+The output javascript code will in the folder */path/of/the/source/code/***out**
+
 ## Example
 
 ### Parsing  English	
