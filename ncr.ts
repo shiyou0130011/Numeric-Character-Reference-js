@@ -2,7 +2,11 @@
  * 字元值參照 (Numeric Character Reference, NCR) 轉換
  */
 namespace NCR {
-	const LEAD_ADD_MIN = 0xD800, TRAIL_ADD_MIN = 0xDC00, NCR_SUBTRACT = 0x10000
+	const LEAD_ADD_MIN = 0xD800, 
+	      LEAD_ADD_MAX = 0xDBFF,
+	      TRAIL_ADD_MIN = 0xDC00, 
+	      TRAIL_ADD_MAX = 0xDFFF, 
+	      NCR_SUBTRACT = 0x10000
 
 	/**
 	 * 將U+10000到U+10FFFF的碼位轉為字元值參照 (Numeric Character Reference, NCR)
@@ -10,7 +14,12 @@ namespace NCR {
 	 * @param hexadecimal 是否輸出成 16 進制的 NCR
 	 */
 	function encodeUTF16(leadSurrogates: number, trailSurrogates: number, hexadecimal: boolean  = false) {
-		if (leadSurrogates < LEAD_ADD_MIN || trailSurrogates < TRAIL_ADD_MIN) {
+		if (
+			!(
+				leadSurrogates >= LEAD_ADD_MIN && leadSurrogates <= LEAD_ADD_MAX &&
+				trailSurrogates >= TRAIL_ADD_MIN && trailSurrogates <= TRAIL_ADD_MAX
+			)
+		) {
 			return String.fromCharCode(leadSurrogates) + String.fromCharCode(trailSurrogates)
 		}
 		
