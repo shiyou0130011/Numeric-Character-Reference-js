@@ -1,12 +1,16 @@
+/// <reference path="html.symbol.ts" />
+
 /**
  * 字元值參照 (Numeric Character Reference, NCR) 轉換
  */
 namespace NCR {
+	/** 高位代理（high surrogate） */
 	const LEAD_ADD_MIN = 0xD800, 
-	      LEAD_ADD_MAX = 0xDBFF,
-	      TRAIL_ADD_MIN = 0xDC00, 
-	      TRAIL_ADD_MAX = 0xDFFF, 
-	      NCR_SUBTRACT = 0x10000
+	      LEAD_ADD_MAX = 0xDBFF
+	/** 低位代理（low surrogate） */
+	const TRAIL_ADD_MIN = 0xDC00, 
+	      TRAIL_ADD_MAX = 0xDFFF
+	const NCR_SUBTRACT = 0x10000
 
 	/**
 	 * 將U+10000到U+10FFFF的碼位轉為字元值參照 (Numeric Character Reference, NCR)

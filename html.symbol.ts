@@ -1,3 +1,6 @@
+/**
+ * HTML 的符號集
+ */
 var HTMLSymbols = {
 	// HTML 4 Entity
 	"&amp;":	"\u0026", 
