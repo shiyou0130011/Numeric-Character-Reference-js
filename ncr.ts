@@ -94,13 +94,13 @@ namespace NCR {
 		return str
 			.replace(/&#x(\w*);/g, function (match, s) {
 				var num = parseInt(s, 16)
-				if (num <= 0xffff) {
+				if (num < NCR_SUBTRACT) {
 					return String.fromCharCode(num)
 				}
 				return decodeUTF16(num)
 			})
 			.replace(/&#(\d*);/g, function (match, num) {
-				if (num <= 0xffff) {
+				if (num < NCR_SUBTRACT) {
 					return String.fromCharCode(num)
 				}
 				return decodeUTF16(num)
